@@ -23,7 +23,7 @@ return(
     <ListItem
     title= {item.name}
     Subtitle={item.description}
-    leftAvatar={{source: required('./images/bootstrap-logo.png')}} />
+    leftAvatar={{source: require ('./images/bootstrap-logo.png')}} />
 )
     }
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import { Card } from 'react-native-elements';
-import { Text} from 'react-native';
+
 
 class Contact extends Component{
 
