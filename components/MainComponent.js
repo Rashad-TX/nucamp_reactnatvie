@@ -11,6 +11,7 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { Icon } from 'react-native-elements';
 import SafeAreaView from 'react-native-safe-area-view';
+import { connect } from 'react-redux';
 
 const DirectoryNavigator = createStackNavigator(
     {
