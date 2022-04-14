@@ -5,6 +5,7 @@ import { Text} from 'react-native';
 import { connect } from 'react-redux';
 import { FlatList } from "react-native";
 import { baseUrl } from '../shared/baseUrl';
+import Loading from './LoadingComponent';
 
 const mapStateToProps = state => {
     return {
@@ -22,6 +23,7 @@ class About extends Component {
     }
 
 render(){
+    
     const renderPartner = ({item}) => {
 return(
     <ListItem
@@ -32,8 +34,36 @@ return(
     }
 
 
-    
+    if (this.props.partners.isLoading) {
+        return (
+            <ScrollView>
+                <Mission />
+                <Card
+                    title='Community Partners'>
+                    <Loading />
+                </Card>
+            </ScrollView>
+        );
+    }
+
+
+
+
+
+    if (this.props.partners.errMess) {
+        return (
+<ScrollView>
+                    <Mission />
+                    <Card
+                        title='Community Partners'>
+                        <Text>{this.props.partners.errMess}</Text>
+                    </Card>
+                </ScrollView>
+            );
+        }
+
     return <ScrollView>
+
 <Mission/>
 <Card
 title="Community Partners">
