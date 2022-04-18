@@ -5,14 +5,14 @@ function Loading() {
     return (
         <View style={styles.loadingView}>
             <ActivityIndicator size='large' color='#5637DD' />
-            <Text style={styles.loadingText}>Loading . . .</Text>
+            <Text style={styles.loadingText}>Loading...</Text>
         </View>
     );
 }
 
-const styles = StyleSheet.create(
+const styles= StyleSheet.create(
     {
-        loadingView: {
+        loadingView:{
             alignItems: 'center',
             justifyContent: 'center',
             flex: 1
@@ -23,6 +23,6 @@ const styles = StyleSheet.create(
             fontWeight: 'bold'
         }
     }
-);
+)
 
 export default Loading;

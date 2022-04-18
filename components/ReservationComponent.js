@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, StyleSheet,
-    Picker, Switch, Button, Modal } from 'react-native';
+import { Text, View, ScrollView, StyleSheet, Picker, Switch, Button, Modal } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 class Reservation extends Component {
@@ -9,8 +8,8 @@ class Reservation extends Component {
         super(props);
 
         this.state = {
-            campers: 1,
-            hikeIn: false,
+            campers: 1, 
+            hikeIn: false, 
             date: new Date(),
             showCalendar: false,
             showModal: false
@@ -29,13 +28,14 @@ class Reservation extends Component {
         console.log(JSON.stringify(this.state));
         this.toggleModal();
     }
-       
+
     resetForm() {
         this.setState({
-            campers: 1,
+            campers: 1, 
             hikeIn: false,
             date: new Date(),
-            showCalendar: false     
+            showCalendar: false,
+            showModal: false
         });
     }
 
@@ -49,20 +49,20 @@ class Reservation extends Component {
                         selectedValue={this.state.campers}
                         onValueChange={itemValue => this.setState({campers: itemValue})}
                     >
-                        <Picker.Item label='1' value='1' />
-                        <Picker.Item label='2' value='2' />
-                        <Picker.Item label='3' value='3' />
-                        <Picker.Item label='4' value='4' />
-                        <Picker.Item label='5' value='5' />
-                        <Picker.Item label='6' value='6' />
+                        <Picker.Item label="1" value="1" />
+                        <Picker.Item label="2" value="2" />
+                        <Picker.Item label="3" value="3" />
+                        <Picker.Item label="4" value="4" />
+                        <Picker.Item label="5" value="5" />
+                        <Picker.Item label="6" value="6" />
                     </Picker>
                 </View>
                 <View style={styles.formRow}>
                     <Text style={styles.formLabel}>Hike-In?</Text>
-                    <Switch
+                    <Switch 
                         style={styles.formItem}
                         value={this.state.hikeIn}
-                        trackColor={{true: '#5637DD', false: null}}
+                        trackColor={{true:'#537DD', false: null}}
                         onValueChange={value => this.setState({hikeIn: value})}
                     />
                 </View>
@@ -70,7 +70,7 @@ class Reservation extends Component {
                     <Text style={styles.formLabel}>Date</Text>
                     <Button
                         onPress={() =>
-                            this.setState({showCalendar: !this.state.showCalendar})
+                        this.setState({showCalendar: !this.state.showCalendar})
                         }
                         title={this.state.date.toLocaleDateString('en-US')}
                         color='#5637DD'
@@ -79,13 +79,13 @@ class Reservation extends Component {
                 </View>
                 {this.state.showCalendar && (
                     <DateTimePicker
+                        style={styles.formItem}
                         value={this.state.date}
                         mode={'date'}
                         display='default'
                         onChange={(event, selectedDate) => {
-                            selectedDate && this.setState({date: selectedDate, showCalendar: false});
+                            selectedDate && this.setState({date: selectedDate, showCalendar: false})
                         }}
-                        style={styles.formItem}
                     />
                 )}
                 <View style={styles.formRow}>
@@ -94,13 +94,14 @@ class Reservation extends Component {
                         title='Search'
                         color='#5637DD'
                         accessibilityLabel='Tap me to search for available campsites to reserve'
+
                     />
                 </View>
                 <Modal
                     animationType={'slide'}
                     transparent={false}
                     visible={this.state.showModal}
-                    onRequestClose={() => this.toggleModal()}
+                    onRequestClose={()=>this.toggleModal()}
                 >
                     <View style={styles.modal}>
                         <Text style={styles.modalTitle}>Search Campsite Reservations</Text>
@@ -108,7 +109,7 @@ class Reservation extends Component {
                             Number of Campers: {this.state.campers}
                         </Text>
                         <Text style={styles.modalText}>
-                            Hike-In?: {this.state.hikeIn ? 'Yes' : 'No'}
+                            Hike-In?: {this.state.hikeIn ? "Yes" : "No"}
                         </Text>
                         <Text style={styles.modalText}>
                             Date: {this.state.date.toLocaleDateString('en-US')}
@@ -122,11 +123,10 @@ class Reservation extends Component {
                             title='Close'
                         />
                     </View>
-                </Modal>
 
-                
+                </Modal>
             </ScrollView>
-        );
+        )
     }
 }
 
@@ -134,8 +134,8 @@ const styles = StyleSheet.create({
     formRow: {
         alignItems: 'center',
         justifyContent: 'center',
-        flex: 1,
-        flexDirection: 'row',
+        flex: 1, 
+        flexDirection: 'row', 
         margin: 20
     },
     formLabel: {
@@ -145,14 +145,14 @@ const styles = StyleSheet.create({
     formItem: {
         flex: 1
     },
-    modal: { 
+    modal: {
         justifyContent: 'center',
-        margin: 20
+        margin: 2
     },
     modalTitle: {
         fontSize: 24,
         fontWeight: 'bold',
-        backgroundColor: '#5637DD',
+        backgroundColor:'#5637',
         textAlign: 'center',
         color: '#fff',
         marginBottom: 20
@@ -161,7 +161,6 @@ const styles = StyleSheet.create({
         fontSize: 18,
         margin: 10
     }
-
 });
 
 export default Reservation;
