@@ -12,7 +12,7 @@ function Loading() {
 
 const styles= StyleSheet.create(
     {
-        loadingView:{
+        loadingView: {
             alignItems: 'center',
             justifyContent: 'center',
             flex: 1

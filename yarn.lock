@@ -3263,6 +3263,11 @@ expo-font@~9.1.0:
   dependencies:
     fontfaceobserver "^2.1.0"
 
+expo-image-manipulator@~9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/expo-image-manipulator/-/expo-image-manipulator-9.1.0.tgz#c1bac33c071e116a97a654f9f11bf50f7ff8932c"
+  integrity sha512-jguMQ3k63JJwxo1mAsLRa+lXbH9fVsQXKbOfwY5KKXvNld7aaRgCO6pWnrBfCxvKkU4KhVp9JWOrsz4qcnYQ2w==
+
 expo-image-picker@~10.1.4:
   version "10.1.4"
   resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-10.1.4.tgz#5805ea365385298cd59315790481a0a8d6c6a9ef"
@@ -3284,6 +3289,14 @@ expo-mail-composer@~10.1.2:
   integrity sha512-G9Wvl6S8ZB+tU1p5bS/Qx3O1hmv8R6HRjmrbCMxaTvnHGiQ1L8MuuAvoC7uynip5npw86JXd/BNQ6LMiQtRyzw==
   dependencies:
     query-string "^6.2.0"
+
+expo-media-library@~12.0.2:
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/expo-media-library/-/expo-media-library-12.0.2.tgz#6dd047c57fb3187b25a31086c32690e1c63cb1be"
+  integrity sha512-0gi4ny4IldYg3uWHjwP+P04VRe5Ea9BYflRILpQWBzcivppzEzTSYFQKUTQEXuZsWB9PA5uTQd2UaB+4q/dcJQ==
+  dependencies:
+    "@expo/config-plugins" "^1.0.18"
+    unimodules-permissions-interface "~6.1.0"
 
 expo-notifications@~0.11.6:
   version "0.11.6"
